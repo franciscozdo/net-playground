@@ -1,0 +1,18 @@
+master:
+  connections: 16
+  address: 172.0.0.3
+host0:
+  address: 127.0.0.1
+  port: 12345
+  connected:
+    - host1
+  services:
+    - echo
+    - http
+host1:
+  address: 172.0.0.3
+  port: 54321
+  connected:
+    - host0
+  services:
+    - echo

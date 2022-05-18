@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package messages;
+option go_package = "./messages";
+
+enum Test {
+  UNKNOWN = 0;
+  ECHO = 1;
+  HTTP = 2;
+}
+
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloResponse {
+  string name = 1;
+}
+
+message TestRequest {
+  int32 id = 1;
+  Test test_type = 2;
+}
+
+message TestRequestResp {
+  int32 id = 1;
+  bool scheduled = 2;
+}
+
+message ResultRequest {
+  int32 id = 1;
+}
+
+message ResultData {
+  int32 id = 1;
+  bool success = 2;
+  repeated string reachable = 3;
+}
+
+service Host {
+  rpc Hello(HelloRequest) returns (HelloResponse) {}
+  rpc RunTest(TestRequest) returns (TestRequestResp) {}
+  rpc GetResult(ResultRequest) returns (ResultData) {}
+}

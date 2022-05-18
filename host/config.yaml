@@ -1,0 +1,9 @@
+name: host0
+port: 12345
+connected:
+  - 172.24.2.3
+  - 172.24.2.4
+  - 172.24.2.5
+services:
+  - echo
+  - http

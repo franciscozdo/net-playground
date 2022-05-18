@@ -1,0 +1,6 @@
+master/master
+host/host
+services/echo
+config/host*
+config/master*
+docker-compose.yaml

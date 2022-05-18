@@ -1,0 +1,50 @@
+network: 172.24.2.0/16
+machines:
+  master:
+    address: 172.24.2.1
+    connections: 16
+  host0:
+    address: 172.24.2.2
+    port: 50009
+    connected:
+      - host1
+      - host2
+      - host3
+    services:
+      - echo
+  host1:
+    address: 172.24.2.3
+    port: 50009
+    connected:
+      - host2
+      - host3
+      - host4
+    services:
+      - http
+  host2:
+    address: 172.24.2.4
+    port: 50009
+    connected:
+      - host3
+      - host4
+      - host0
+    services:
+      - echo
+  host3:
+    address: 172.24.2.5
+    port: 50009
+    connected:
+      - host4
+      - host0
+      - host1
+    services:
+      - http
+  host4:
+    address: 172.24.2.6
+    port: 50009
+    connected:
+      - host0
+      - host1
+      - host2
+    services:
+      - echo
