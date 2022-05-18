@@ -6,7 +6,7 @@ require (
 	golang.org/x/net v0.0.0-20201021035429-f5854403a974
 	google.golang.org/grpc v1.46.0
 	google.golang.org/protobuf v1.28.0
-	gopkg.in/yaml.v2 v2.2.3
+	gopkg.in/yaml.v2 v2.2.8
 )
 
 require (
